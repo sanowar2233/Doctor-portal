@@ -9,6 +9,7 @@ import Appointment from './Pages/Appointment/Appointment';
 import Register from './Pages/Register/Register';
 import DashBoard from './Pages/DashBoard/DashBoard';
 import { Toaster } from 'react-hot-toast';
+import PrivateRoute from './Layout/PrivateRote/PrivateRoute';
 
 function App() {
   const router = createBrowserRouter([
@@ -30,7 +31,7 @@ function App() {
           path:'/register', element:<Register></Register>
         },
         {
-          path:'/dashboard', element:<DashBoard></DashBoard>
+          path:'/dashboard', element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute>
         }
         
       ]
